@@ -19,6 +19,10 @@
 #include "scale/ScalePresenter.h"
 #include "scale/ScaleParameterWidget.h"
 
+#include "rotation/RotationModel.h"
+#include "rotation/RotationPresenter.h"
+#include "rotation/RotationParameterWidget.h"
+
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
@@ -53,6 +57,11 @@ private:
   ScaleParameterWidget * m_scaleParameterWidget;
   ScaleModel * m_scaleModel;
   ScalePresenter * m_scalePresenter;
+
+  //rotation stuff
+  RotationParameterWidget * m_rotationParameterWidget;
+  RotationModel * m_rotationModel;
+  RotationPresenter * m_rotationPresenter;
 
   //menubar actions
   QAction * m_quitAction;

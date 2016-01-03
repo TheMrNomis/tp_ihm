@@ -24,7 +24,10 @@ SOURCES += main.cpp\
     GraphicsImageView.cpp \
     GraphicsImageScene.cpp \
     scale/ScalePresenter.cpp \
-    scale/ScaleParameterWidget.cpp
+    scale/ScaleParameterWidget.cpp \
+    rotation/RotationModel.cpp \
+    rotation/RotationParameterWidget.cpp \
+    rotation/RotationPresenter.cpp
 
 HEADERS  += MainWindow.h \
     AbstractModel.h \
@@ -35,4 +38,7 @@ HEADERS  += MainWindow.h \
     GraphicsImageScene.h \
     scale/ScalePresenter.h \
     scale/ScaleParameterWidget.h \
-    ImageConverter.h
+    ImageConverter.h \
+    rotation/RotationModel.h \
+    rotation/RotationParameterWidget.h \
+    rotation/RotationPresenter.h
