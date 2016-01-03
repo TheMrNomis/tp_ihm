@@ -5,8 +5,7 @@ GraphicsImageView::GraphicsImageView(GraphicsImageScene * scene, QWidget* parent
   QGraphicsView(scene, parent),
   m_scene(scene),
   m_ctrlPressed(false),
-  m_zoomingFactor(0.05),
-  m_lastMousePosition()
+  m_zoomingFactor(0.05)
 {
 }
 
@@ -47,19 +46,4 @@ void GraphicsImageView::wheelEvent(QWheelEvent * e)
     }
     else
       QGraphicsView::wheelEvent(e);
-}
-
-void GraphicsImageView::mouseMoveEvent(QMouseEvent *e)
-{
-  if(e->buttons() & Qt::LeftButton)
-  {
-    QPoint delta = e->pos() - m_lastMousePosition;
-    m_lastMousePosition = e->pos();
-    GraphicsImageView::wheelEvent(new QWheelEvent(e->pos(),e->globalPos(),delta,delta,delta.x()+delta.y(),Qt::Horizontal,e->buttons(),e->modifiers()));
-  }
-  else
-  {
-    m_lastMousePosition = e->pos();
-    GraphicsImageView::mouseMoveEvent(e);
-  }
 }
