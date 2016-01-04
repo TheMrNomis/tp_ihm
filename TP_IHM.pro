@@ -37,4 +37,4 @@ HEADERS  += MainWindow.h \
     scale/ScalePresenter.h \
     scale/ScaleParameterWidget.h \
     ImageConverter.h \
-    drawablegraphicsscene.h
+    DrawableGraphicsScene.h
