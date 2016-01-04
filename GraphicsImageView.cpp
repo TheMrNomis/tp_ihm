@@ -55,12 +55,6 @@ void GraphicsImageView::mousePressEvent(QMouseEvent * e)
     m_scene->mousePressEvent(&event);
 }
 
-void GraphicsImageView::mouseReleaseEvent(QMouseEvent * e)
-{
-    QMouseEvent event = mapToScene(e);
-    m_scene->mouseReleaseEvent(&event);
-}
-
 void GraphicsImageView::mouseMoveEvent(QMouseEvent *e)
 {
     QMouseEvent event = mapToScene(e);

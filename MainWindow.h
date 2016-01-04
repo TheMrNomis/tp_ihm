@@ -19,6 +19,10 @@
 #include "scale/ScalePresenter.h"
 #include "scale/ScaleParameterWidget.h"
 
+#include "inpainting/InpaintingModel.h"
+#include "inpainting/InpaintingPresenter.h"
+#include "inpainting/InpaintingParameterWidget.h"
+
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
@@ -53,6 +57,11 @@ private:
   ScaleParameterWidget * m_scaleParameterWidget;
   ScaleModel * m_scaleModel;
   ScalePresenter * m_scalePresenter;
+
+  //inpainting stuff
+  InpaintingParameterWidget * m_inpaintingParameterWidget;
+  InpaintingModel * m_inpaintingModel;
+  InpaintingPresenter * m_inpaintingPresenter;
 
   //menubar actions
   QAction * m_quitAction;

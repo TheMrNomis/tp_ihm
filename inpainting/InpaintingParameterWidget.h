@@ -5,6 +5,7 @@
 
 #include <QSpinBox>
 #include <QPushButton>
+#include <QButtonGroup>
 
 class InpaintingParameterWidget : public AbstractParameterWidget
 {

@@ -9,9 +9,15 @@ MainWindow::MainWindow(QWidget *parent)
     m_inputView(new GraphicsImageView(m_inputScene, m_centralWidget)),
     m_resultView(new GraphicsImageView(m_resultScene, m_centralWidget)),
     m_parameterContainer(new QTabWidget(this)),
+
     m_scaleParameterWidget(new ScaleParameterWidget(m_parameterContainer)),
     m_scaleModel(new ScaleModel),
     m_scalePresenter(new ScalePresenter(this, m_scaleModel, m_scaleParameterWidget, m_inputScene, m_resultScene)),
+
+    m_inpaintingParameterWidget(new InpaintingParameterWidget(m_parameterContainer)),
+    m_inpaintingModel(new InpaintingModel),
+    m_inpaintingPresenter(new InpaintingPresenter(this, m_inpaintingModel, m_inpaintingParameterWidget, m_inputScene, m_resultScene)),
+
     m_quitAction(new QAction(QIcon::fromTheme("application-exit"), "quit", this)),
     m_openImageAction(new QAction(QIcon::fromTheme("document-open"), "open", this)),
     m_saveImageAction(new QAction(QIcon::fromTheme("document-save"), "save", this))
@@ -37,9 +43,9 @@ void MainWindow::setupGUI()
   mainLayout->addWidget(m_parameterContainer);
   mainLayout->addLayout(graphicsViewLayout);
 
-  //scaling
   m_parameterContainer->addTab(m_scaleParameterWidget, m_scaleParameterWidget->title());
 
+  m_parameterContainer->addTab(m_inpaintingParameterWidget, m_inpaintingParameterWidget->title());
 
 }
 

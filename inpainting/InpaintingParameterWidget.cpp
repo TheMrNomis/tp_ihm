@@ -7,8 +7,8 @@ InpaintingParameterWidget::InpaintingParameterWidget(QWidget *parent):
     m_square (new QPushButton(this)),
     m_size(new QSpinBox(this))
 {
-    m_brush->addButton(m_circle,1);
-    m_brush->addButton(m_square,2);
+    //m_brush->addButton(m_circle,1);
+    //m_brush->addButton(m_square,2);
 
 }
 
