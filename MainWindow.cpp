@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_scaleModel(new ScaleModel),
     m_scalePresenter(new ScalePresenter(this, m_scaleModel, m_scaleParameterWidget, m_inputScene, m_resultScene)),
 
-    m_inpaintingParameterWidget(new InpaintingParameterWidget(m_parameterContainer)),
+    m_inpaintingParameterWidget(new InpaintingParameterWidget(m_inputScene, m_parameterContainer)),
     m_inpaintingModel(new InpaintingModel),
     m_inpaintingPresenter(new InpaintingPresenter(this, m_inpaintingModel, m_inpaintingParameterWidget, m_inputScene, m_resultScene)),
 

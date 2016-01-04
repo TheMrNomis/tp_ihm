@@ -1,28 +1,40 @@
 #ifndef INPAINTINGPARAMETERWIDGET_H
 #define INPAINTINGPARAMETERWIDGET_H
 
-#include "AbstractParameterWidget.h"
+#include "../AbstractParameterWidget.h"
+#include "../DrawableGraphicsScene.h"
 
 #include <QSpinBox>
 #include <QPushButton>
 #include <QButtonGroup>
+#include <QGroupBox>
 
 class InpaintingParameterWidget : public AbstractParameterWidget
 {
-public:
-    InpaintingParameterWidget(QWidget * parent = 0);
+  Q_OBJECT
 
-    // methodes
+public:
+    InpaintingParameterWidget(DrawableGraphicsScene * scene, QWidget * parent = 0);
+
     int getSize() const;
 
+private slots:
+    void setCircleBrushShape();
+    void setSquareBrushShape();
 
 private:
-    QButtonGroup * m_brush;
+    inline void setBrushShape(DrawableGraphicsScene::BrushShape shape);
 
-    QPushButton * m_circle;
-    QPushButton * m_square;
+private:
+    DrawableGraphicsScene * m_scene;
 
-    QSpinBox * m_size;
+    QGroupBox * m_brushGroupBox;
+    QButtonGroup * m_brushButtonGroup;
+
+    QPushButton * m_circleBrushButton;
+    QPushButton * m_squareBrushButton;
+
+    QSpinBox * m_brushSize;
 };
 
 #endif // INPAINTINGPARAMETERWIDGET_H
