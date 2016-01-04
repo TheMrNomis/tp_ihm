@@ -14,21 +14,10 @@ class GraphicsImageScene : public DrawableGraphicsScene
 public:
   GraphicsImageScene(QObject * parent = 0);
 
-  /**
-   * @brief fills the scene with an image
-   * @param img: the image to fill the scene with
-   */
-  //void setImage(QImage const& img);
-
-  /**
-   * @brief gets the scene image
-   * @return the QImage contained in the scene
-   */
-  //QImage image() const;
-
   void mousePressEvent(QMouseEvent *e);
   void mouseReleaseEvent(QMouseEvent *e);
 
+  void setMousePosition(QPointF const& location);
 protected:
   QImage m_img;
   QGraphicsPixmapItem * m_pixmapItem;
