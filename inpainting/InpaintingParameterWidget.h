@@ -5,6 +5,7 @@
 #include "../DrawableGraphicsScene.h"
 
 #include <QSpinBox>
+#include <QSlider>
 #include <QPushButton>
 #include <QButtonGroup>
 #include <QGroupBox>
@@ -16,11 +17,14 @@ class InpaintingParameterWidget : public AbstractParameterWidget
 public:
     InpaintingParameterWidget(DrawableGraphicsScene * scene, QWidget * parent = 0);
 
-    int getSize() const;
+    inline DrawableGraphicsScene::BrushShape getShape() const;
+    inline int getSize() const;
 
 private slots:
     void setCircleBrushShape();
     void setSquareBrushShape();
+
+    void setBrushSize(int size);
 
 private:
     inline void setBrushShape(DrawableGraphicsScene::BrushShape shape);
@@ -34,7 +38,9 @@ private:
     QPushButton * m_circleBrushButton;
     QPushButton * m_squareBrushButton;
 
-    QSpinBox * m_brushSize;
+    QWidget * m_brushSizeContainerWidget;
+    QSlider * m_brushSizeSlider;
+    QSpinBox * m_brushSizeSpinBox;
 };
 
 #endif // INPAINTINGPARAMETERWIDGET_H
