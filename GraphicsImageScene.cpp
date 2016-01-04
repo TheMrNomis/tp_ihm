@@ -43,7 +43,11 @@ void GraphicsImageScene::mouseReleaseEvent(QMouseEvent *e)
 
 void GraphicsImageScene::mouseMoveEvent(QMouseEvent *e)
 {
+  this->redrawBrush(mapToBrushCenter(e->localPos()));
+}
+
+QPointF GraphicsImageScene::mapToBrushCenter(QPointF const& position) const
+{
   qreal brushHalfSize = this->brushSize()/2.0;
-  QPointF brushPosition = e->localPos() - QPointF(brushHalfSize, brushHalfSize);
-  this->redrawBrush(brushPosition);
+  return position - QPointF(brushHalfSize, brushHalfSize);
 }

@@ -18,6 +18,9 @@ public:
   void mouseReleaseEvent(QMouseEvent *e);
   void mouseMoveEvent(QMouseEvent *e);
 
+private:
+  QPointF mapToBrushCenter(QPointF const& position) const;
+
 protected:
   QImage m_img;
   QGraphicsPixmapItem * m_pixmapItem;
