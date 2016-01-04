@@ -26,6 +26,9 @@ protected:
   virtual void mousePressEvent(QMouseEvent *e);
   virtual void mouseReleaseEvent(QMouseEvent *e);
   virtual void mouseMoveEvent(QMouseEvent *e);
+
+  QMouseEvent mapToScene(QMouseEvent * e) const;
+
 protected:
   GraphicsImageScene * m_scene;
 

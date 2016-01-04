@@ -16,8 +16,8 @@ public:
 
   void mousePressEvent(QMouseEvent *e);
   void mouseReleaseEvent(QMouseEvent *e);
+  void mouseMoveEvent(QMouseEvent *e);
 
-  void setMousePosition(QPointF const& location);
 protected:
   QImage m_img;
   QGraphicsPixmapItem * m_pixmapItem;
