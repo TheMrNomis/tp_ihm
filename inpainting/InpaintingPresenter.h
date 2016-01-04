@@ -17,6 +17,9 @@ public:
 
     virtual void runModel();
     virtual void presentModelResults();
+
+private:
+    InpaintingModel * m_inpaintingModel;
 };
 
 #endif // INPAINTINGPRESENTER_H
