@@ -44,3 +44,8 @@ HEADERS  += MainWindow.h \
     inpainting/InpaintingModel.h \
     inpainting/InpaintingParameterWidget.h \
     inpainting/InpaintingPresenter.h
+
+DISTFILES +=
+
+RESOURCES += \
+    images/GUI.qrc

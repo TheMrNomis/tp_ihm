@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/GUI">
+        <file>circle</file>
+        <file>square.png</file>
+    </qresource>
+</RCC>

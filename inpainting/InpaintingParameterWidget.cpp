@@ -6,8 +6,8 @@ InpaintingParameterWidget::InpaintingParameterWidget(DrawableGraphicsScene * sce
 
     m_brushGroupBox(new QGroupBox("Brush shape", this)),
     m_brushButtonGroup(new QButtonGroup()),
-    m_circleBrushButton(new QPushButton("circle", m_brushGroupBox)),
-    m_squareBrushButton(new QPushButton("square", m_brushGroupBox)),
+    m_circleBrushButton(new QPushButton(" circle", m_brushGroupBox)),
+    m_squareBrushButton(new QPushButton(" square", m_brushGroupBox)),
 
     m_brushSizeContainerWidget(new QWidget(this)),
     m_brushSizeSlider(new QSlider(Qt::Horizontal, m_brushSizeContainerWidget)),
@@ -15,6 +15,9 @@ InpaintingParameterWidget::InpaintingParameterWidget(DrawableGraphicsScene * sce
 {
   /*----brush shape----*/
   //params
+  m_circleBrushButton->setIcon(QIcon(":/GUI/circle"));
+  m_squareBrushButton->setIcon(QIcon(":/GUI/square"));
+
   m_circleBrushButton->setCheckable(true);
   m_squareBrushButton->setCheckable(true);
 
