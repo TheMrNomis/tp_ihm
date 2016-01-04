@@ -25,7 +25,7 @@ SOURCES += main.cpp\
     GraphicsImageScene.cpp \
     scale/ScalePresenter.cpp \
     scale/ScaleParameterWidget.cpp \
-    Drawablegraphicsscene.cpp
+    DrawableGraphicsScene.cpp
 
 HEADERS  += MainWindow.h \
     AbstractModel.h \
@@ -36,4 +36,5 @@ HEADERS  += MainWindow.h \
     GraphicsImageScene.h \
     scale/ScalePresenter.h \
     scale/ScaleParameterWidget.h \
-    ImageConverter.h
+    ImageConverter.h \
+    drawablegraphicsscene.h
