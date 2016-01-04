@@ -5,6 +5,7 @@
 #include <QImage>
 #include <QKeyEvent>
 #include <QWheelEvent>
+#include <QMouseEvent>
 
 #include "GraphicsImageScene.h"
 
@@ -22,6 +23,8 @@ protected:
   virtual void keyReleaseEvent(QKeyEvent * e);
   virtual void wheelEvent(QWheelEvent * e);
 
+  virtual void mousePressEvent(QMouseEvent *e);
+  virtual void mouseReleaseEvent(QMouseEvent *e);
 protected:
   GraphicsImageScene * m_scene;
 

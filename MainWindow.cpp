@@ -39,6 +39,8 @@ void MainWindow::setupGUI()
 
   //scaling
   m_parameterContainer->addTab(m_scaleParameterWidget, m_scaleParameterWidget->title());
+
+
 }
 
 void MainWindow::setupMenuBar()

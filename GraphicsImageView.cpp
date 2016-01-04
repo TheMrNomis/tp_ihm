@@ -47,3 +47,13 @@ void GraphicsImageView::wheelEvent(QWheelEvent * e)
     else
       QGraphicsView::wheelEvent(e);
 }
+
+void GraphicsImageView::mousePressEvent(QMouseEvent * e)
+{
+    m_scene->mousePressEvent(e);
+}
+
+void GraphicsImageView::mouseReleaseEvent(QMouseEvent * e)
+{
+    m_scene->mouseReleaseEvent(e);
+}

@@ -1,4 +1,3 @@
-
 #include "DrawableGraphicsScene.h"
 
 #include <QGraphicsPixmapItem>
