@@ -1,7 +1,6 @@
-#include "inpaintingparameterwidget.h"
+#include "InpaintingParameterWidget.h"
 
 InpaintingParameterWidget::InpaintingParameterWidget()
 {
 
 }
-
