@@ -57,12 +57,18 @@ public:
     void setBrushVisibility(bool visibility);
     bool brushVisibility() const;
 
+    /**
+     * set if the mask is visible or not
+     */
+    void setMaskVisibility(bool visibility);
+    bool maskVisiblity() const;
+
 public:
     /**
      * Set if the scene is intercative or not
      * The user can paint on the scene only if it is interactive
      */
-    void setInteractive(bool intercative);
+    virtual void setInteractive(bool intercative);
     bool isInteractive() const;
 
 protected:

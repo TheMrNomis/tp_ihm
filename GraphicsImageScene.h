@@ -17,6 +17,8 @@ public:
   void mousePressEvent(QMouseEvent *e);
   void mouseMoveEvent(QMouseEvent *e);
 
+  void setInteractive(bool interactive);
+
 private:
   QPointF mapToBrushCenter(QPointF const& position) const;
 

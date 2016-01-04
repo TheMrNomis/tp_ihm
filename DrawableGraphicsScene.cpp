@@ -132,6 +132,16 @@ bool DrawableGraphicsScene::brushVisibility() const
     return d->brusVisibility;
 }
 
+void DrawableGraphicsScene::setMaskVisibility(bool visibility)
+{
+  d->maskItem->setVisible(visibility);
+}
+
+bool DrawableGraphicsScene::maskVisiblity() const
+{
+  return d->maskItem->isVisible();
+}
+
 void DrawableGraphicsScene::setBrushShape(BrushShape shape)
 {
     d->brushShape = shape;

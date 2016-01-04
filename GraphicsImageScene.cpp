@@ -26,6 +26,13 @@ void GraphicsImageScene::mouseMoveEvent(QMouseEvent *e)
   }
 }
 
+void GraphicsImageScene::setInteractive(bool interactive)
+{
+  this->setBrushVisibility(interactive);
+  this->setMaskVisibility(interactive);
+  DrawableGraphicsScene::setInteractive(interactive);
+}
+
 QPointF GraphicsImageScene::mapToBrushCenter(QPointF const& position) const
 {
   qreal brushHalfSize = this->brushSize()/2.0;
