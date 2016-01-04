@@ -51,15 +51,23 @@ void GraphicsImageView::wheelEvent(QWheelEvent * e)
 
 void GraphicsImageView::mousePressEvent(QMouseEvent * e)
 {
-    m_scene->mousePressEvent(e);
+    QMouseEvent event = mapToScene(e);
+    m_scene->mousePressEvent(&event);
 }
 
 void GraphicsImageView::mouseReleaseEvent(QMouseEvent * e)
 {
-    m_scene->mouseReleaseEvent(e);
+    QMouseEvent event = mapToScene(e);
+    m_scene->mouseReleaseEvent(&event);
 }
 
 void GraphicsImageView::mouseMoveEvent(QMouseEvent *e)
 {
-  m_scene->setMousePosition(this->mapToScene((int)e->localPos().x(), (int)e->localPos().y()));
+    QMouseEvent event = mapToScene(e);
+    m_scene->mouseMoveEvent(&event);
+}
+
+QMouseEvent GraphicsImageView::mapToScene(QMouseEvent * e) const
+{
+  return QMouseEvent(e->type(), this->QGraphicsView::mapToScene((int)e->localPos().x(), (int)e->localPos().y()), e->button(), e->buttons(), e->modifiers());
 }

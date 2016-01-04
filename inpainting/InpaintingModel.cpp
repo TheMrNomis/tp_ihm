@@ -169,9 +169,9 @@ vpImage<vpRGBa> InpaintingModelPrivate::inPaintingRGBA(const vpImage<vpRGBa> &in
     unsigned int h(inpt.getHeight()), w(inpt.getWidth());
     vpImage<vpRGBa> outpt(h,w);
     vpImage<unsigned char> inpt_R(h,w), inpt_G(h,w), inpt_B(h,w), inpt_A(h,w);
-    for (int i=0; i<h ; i++)
+    for(unsigned int i=0; i<h ; i++)
     {
-        for (int j=0; j<w ; j++)
+        for(unsigned int j=0; j<w ; j++)
         {
             inpt_R[i][j] = inpt[i][j].R;
             inpt_G[i][j] = inpt[i][j].G;
@@ -188,9 +188,9 @@ vpImage<vpRGBa> InpaintingModelPrivate::inPaintingRGBA(const vpImage<vpRGBa> &in
     inpt_A = this->inPaintingMono(inpt_A, msk);
 
     // Construct output
-    for (int i=0; i<h ; i++)
+    for(unsigned int i=0; i<h ; i++)
     {
-        for (int j=0; j<w ; j++)
+        for(unsigned int j=0; j<w ; j++)
         {
             outpt[i][j].R = inpt_R[i][j];
             outpt[i][j].G = inpt_G[i][j];
@@ -218,8 +218,8 @@ vpImage<unsigned char> InpaintingModelPrivate::inPaintingMono(const vpImage<unsi
     vpImage<unsigned char> outpt(h, w);
     vpImage<double> outpt_inpainted(h,w);
     vpImage<double> outpt_smoothed(h,w);
-    for (int i=0; i<h ; i++)
-        for (int j=0; j<w ; j++)
+    for(unsigned int i=0; i<h ; i++)
+        for(unsigned int j=0; j<w ; j++)
             outpt_inpainted[i][j] = inpt[i][j];
 
 
@@ -233,9 +233,9 @@ vpImage<unsigned char> InpaintingModelPrivate::inPaintingMono(const vpImage<unsi
         diff = 0;
         InpaintingModelPrivate::filter(outpt_inpainted, outpt_smoothed, fg, kernel_size);
 
-        for (int i=0; i<h ; i++)
+        for(unsigned int i=0; i<h ; i++)
         {
-            for (int j=0; j<w ; j++)
+            for(unsigned int j=0; j<w ; j++)
             {
                 if (msk[i][j])
                 {
@@ -249,8 +249,8 @@ vpImage<unsigned char> InpaintingModelPrivate::inPaintingMono(const vpImage<unsi
 
 
     // construct outpt
-    for (int i=0; i<h ; i++)
-        for (int j=0; j<w ; j++)
+    for(unsigned int i=0; i<h ; i++)
+        for(unsigned int j=0; j<w ; j++)
             outpt[i][j] = std::floor(outpt_inpainted[i][j] + 0.5);
     return outpt;
 }
