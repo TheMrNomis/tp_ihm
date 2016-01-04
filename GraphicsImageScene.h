@@ -15,11 +15,12 @@ public:
   GraphicsImageScene(QObject * parent = 0);
 
   void mousePressEvent(QMouseEvent *e);
-  void mouseReleaseEvent(QMouseEvent *e);
   void mouseMoveEvent(QMouseEvent *e);
 
 private:
   QPointF mapToBrushCenter(QPointF const& position) const;
+
+  void paint(QMouseEvent *e);
 
 protected:
   QImage m_img;

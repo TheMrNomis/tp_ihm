@@ -14,40 +14,29 @@ GraphicsImageScene::GraphicsImageScene(QObject * parent):
 
 void GraphicsImageScene::mousePressEvent(QMouseEvent *e)
 {
-    /*setInteractive(true);
-    setBrushVisibility(true);
-
-    mask();
-    //redrawBrush(e->localPos());
-    if ( isInteractive() == true){
-
-        if ( e->button() == Qt::LeftButton ){
-            paint(e->localPos());
-            qDebug() << "clic gauche";
-        }
-        else if( e->button() == Qt::RightButton ){
-            erase(e->localPos());
-        }
-
-        //redrawBrush(e->localPos());
-    }
-    */
-}
-
-void GraphicsImageScene::mouseReleaseEvent(QMouseEvent *e)
-{
-    /*if ( e->button() )
-        setBrushVisibility(false);
-        */
+  this->paint(e);
 }
 
 void GraphicsImageScene::mouseMoveEvent(QMouseEvent *e)
 {
   this->redrawBrush(mapToBrushCenter(e->localPos()));
+
+  this->paint(e);
 }
 
 QPointF GraphicsImageScene::mapToBrushCenter(QPointF const& position) const
 {
   qreal brushHalfSize = this->brushSize()/2.0;
   return position - QPointF(brushHalfSize, brushHalfSize);
+}
+
+void GraphicsImageScene::paint(QMouseEvent *e)
+{
+  if(isInteractive())
+  {
+    if(e->buttons() == Qt::LeftButton)
+      DrawableGraphicsScene::paint(mapToBrushCenter(e->localPos()));
+    else if(e->buttons() == Qt::RightButton)
+      DrawableGraphicsScene::erase(mapToBrushCenter(e->localPos()));
+  }
 }
