@@ -7,6 +7,7 @@ GraphicsImageView::GraphicsImageView(GraphicsImageScene * scene, QWidget* parent
   m_ctrlPressed(false),
   m_zoomingFactor(0.05)
 {
+  this->setMouseTracking(true);
 }
 
 GraphicsImageScene* GraphicsImageView::scene() const
@@ -56,4 +57,9 @@ void GraphicsImageView::mousePressEvent(QMouseEvent * e)
 void GraphicsImageView::mouseReleaseEvent(QMouseEvent * e)
 {
     m_scene->mouseReleaseEvent(e);
+}
+
+void GraphicsImageView::mouseMoveEvent(QMouseEvent *e)
+{
+  m_scene->setMousePosition(this->mapToScene((int)e->localPos().x(), (int)e->localPos().y()));
 }
