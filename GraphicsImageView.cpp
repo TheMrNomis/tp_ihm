@@ -5,14 +5,28 @@ GraphicsImageView::GraphicsImageView(GraphicsImageScene * scene, QWidget* parent
   QGraphicsView(scene, parent),
   m_scene(scene),
   m_ctrlPressed(false),
-  m_zoomingFactor(0.05)
+  m_zoomingFactor(0.05),
+  m_tabIndex(-1)
 {
   this->setMouseTracking(true);
+}
+
+void GraphicsImageView::setTabIndex(int index)
+{
+  m_tabIndex = index;
 }
 
 GraphicsImageScene* GraphicsImageView::scene() const
 {
   return m_scene;
+}
+
+void GraphicsImageView::checkCurrentTab(int index)
+{
+    if(index == m_tabIndex)
+      m_scene->setInteractive(true);
+    else
+      m_scene->setInteractive(false);
 }
 
 void GraphicsImageView::keyPressEvent(QKeyEvent * e)

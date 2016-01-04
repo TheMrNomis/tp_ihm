@@ -44,9 +44,10 @@ void MainWindow::setupGUI()
   mainLayout->addLayout(graphicsViewLayout);
 
   m_parameterContainer->addTab(m_scaleParameterWidget, m_scaleParameterWidget->title());
-
   m_parameterContainer->addTab(m_inpaintingParameterWidget, m_inpaintingParameterWidget->title());
+  m_inputView->setTabIndex(m_parameterContainer->indexOf(m_inpaintingParameterWidget));
 
+  QObject::connect(m_parameterContainer, SIGNAL(currentChanged(int)), m_inputView, SLOT(checkCurrentTab(int)));
 }
 
 void MainWindow::setupMenuBar()

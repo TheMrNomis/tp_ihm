@@ -6,7 +6,7 @@ GraphicsImageScene::GraphicsImageScene(QObject * parent):
   m_pixmapItem(new QGraphicsPixmapItem)
 {
   QGraphicsScene::addItem(m_pixmapItem);
-  this->setInteractive(true);
+  this->setInteractive(false);
   this->setBrushShape(CIRCLE);
   this->setBrushSize(20);
   this->setBrushVisibility(true);
@@ -19,9 +19,11 @@ void GraphicsImageScene::mousePressEvent(QMouseEvent *e)
 
 void GraphicsImageScene::mouseMoveEvent(QMouseEvent *e)
 {
-  this->redrawBrush(mapToBrushCenter(e->localPos()));
-
-  this->paint(e);
+  if(isInteractive())
+  {
+      this->redrawBrush(mapToBrushCenter(e->localPos()));
+      this->paint(e);
+  }
 }
 
 QPointF GraphicsImageScene::mapToBrushCenter(QPointF const& position) const
