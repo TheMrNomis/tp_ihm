@@ -1,6 +1,7 @@
 #pragma once
 
-#include "AbstractModel.h"
+#include "../AbstractModel.h"
+#include "../AbstractPresenter.h"
 
 #include <visp/vpImage.h>
 
