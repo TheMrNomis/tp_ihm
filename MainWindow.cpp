@@ -4,10 +4,12 @@ MainWindow::MainWindow(QWidget *parent)
   : QMainWindow(parent),
     m_errorMessages(new QErrorMessage(this)),
     m_centralWidget(new QWidget(this)),
+
     m_inputScene(new GraphicsImageScene(this)),
     m_resultScene(new GraphicsImageScene(this)),
     m_inputView(new GraphicsImageView(m_inputScene, m_centralWidget)),
     m_resultView(new GraphicsImageView(m_resultScene, m_centralWidget)),
+
     m_parameterContainer(new QTabWidget(this)),
 
     m_scaleParameterWidget(new ScaleParameterWidget(m_parameterContainer)),
@@ -17,6 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_inpaintingParameterWidget(new InpaintingParameterWidget(m_inputScene, m_parameterContainer)),
     m_inpaintingModel(new InpaintingModel),
     m_inpaintingPresenter(new InpaintingPresenter(this, m_inpaintingModel, m_inpaintingParameterWidget, m_inputScene, m_resultScene)),
+
+    m_rotationParameterWidget(new RotationParameterWidget(m_parameterContainer)),
+    m_rotationModel(new RotationModel),
+    m_rotationPresenter(new RotationPresenter(this, m_rotationModel, m_rotationParameterWidget, m_inputScene, m_resultScene)),
 
     m_quitAction(new QAction(QIcon::fromTheme("application-exit"), "quit", this)),
     m_openImageAction(new QAction(QIcon::fromTheme("document-open"), "open", this)),
@@ -44,6 +50,7 @@ void MainWindow::setupGUI()
   mainLayout->addLayout(graphicsViewLayout);
 
   m_parameterContainer->addTab(m_scaleParameterWidget, m_scaleParameterWidget->title());
+  m_parameterContainer->addTab(m_rotationParameterWidget, m_rotationParameterWidget->title());
   m_parameterContainer->addTab(m_inpaintingParameterWidget, m_inpaintingParameterWidget->title());
   m_inputView->setTabIndex(m_parameterContainer->indexOf(m_inpaintingParameterWidget));
 

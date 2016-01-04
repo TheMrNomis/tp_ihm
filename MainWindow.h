@@ -23,6 +23,10 @@
 #include "inpainting/InpaintingPresenter.h"
 #include "inpainting/InpaintingParameterWidget.h"
 
+#include "rotation/RotationModel.h"
+#include "rotation/RotationPresenter.h"
+#include "rotation/RotationParameterWidget.h"
+
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
@@ -62,6 +66,11 @@ private:
   InpaintingParameterWidget * m_inpaintingParameterWidget;
   InpaintingModel * m_inpaintingModel;
   InpaintingPresenter * m_inpaintingPresenter;
+
+  //rotation stuff
+  RotationParameterWidget * m_rotationParameterWidget;
+  RotationModel * m_rotationModel;
+  RotationPresenter * m_rotationPresenter;
 
   //menubar actions
   QAction * m_quitAction;

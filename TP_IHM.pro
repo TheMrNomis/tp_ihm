@@ -28,7 +28,10 @@ SOURCES += main.cpp\
     DrawableGraphicsScene.cpp \
     inpainting/InpaintingModel.cpp \
     inpainting/InpaintingParameterWidget.cpp \
-    inpainting/InpaintingPresenter.cpp
+    inpainting/InpaintingPresenter.cpp \
+    rotation/RotationModel.cpp \
+    rotation/RotationParameterWidget.cpp \
+    rotation/RotationPresenter.cpp
 
 HEADERS  += MainWindow.h \
     AbstractModel.h \
@@ -40,6 +43,9 @@ HEADERS  += MainWindow.h \
     scale/ScalePresenter.h \
     scale/ScaleParameterWidget.h \
     ImageConverter.h \
+    rotation/RotationModel.h \
+    rotation/RotationParameterWidget.h \
+    rotation/RotationPresenter.h \
     DrawableGraphicsScene.h \
     inpainting/InpaintingModel.h \
     inpainting/InpaintingParameterWidget.h \
