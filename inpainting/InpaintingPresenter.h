@@ -1,8 +1,9 @@
 #ifndef INPAINTINGPRESENTER_H
 #define INPAINTINGPRESENTER_H
 
+#include "AbstractPresenter.h"
 
-class InpaintingPresenter
+class InpaintingPresenter : public AbstractPresenter
 {
 public:
     InpaintingPresenter();
