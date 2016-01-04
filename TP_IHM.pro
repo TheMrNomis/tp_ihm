@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     GraphicsImageScene.cpp \
     scale/ScalePresenter.cpp \
     scale/ScaleParameterWidget.cpp \
-    DrawableGraphicsScene.cpp
+    DrawableGraphicsScene.cpp \
+    inpainting/InpaintingModel.cpp \
+    inpainting/InpaintingParameterWidget.cpp \
+    inpainting/InpaintingPresenter.cpp
 
 HEADERS  += MainWindow.h \
     AbstractModel.h \
@@ -37,4 +40,7 @@ HEADERS  += MainWindow.h \
     scale/ScalePresenter.h \
     scale/ScaleParameterWidget.h \
     ImageConverter.h \
-    DrawableGraphicsScene.h
+    DrawableGraphicsScene.h \
+    inpainting/InpaintingModel.h \
+    inpainting/InpaintingParameterWidget.h \
+    inpainting/InpaintingPresenter.h
